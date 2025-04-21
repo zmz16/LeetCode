@@ -1,11 +1,16 @@
-#include <vector>
-#include <algorithm>
+# 题目链接
 
-using namespace std; // 使用std命名空间，或者使用std::前缀
+https://leetcode.cn/problems/frequency-of-the-most-frequent-element/solutions/883538/1838-zui-gao-pin-yuan-su-de-pin-shu-shua-ub57/
 
-// 时间复杂度：O(nlogn)
-// 空间复杂度：O(logn)
+## 复杂度分析
 
+时间复杂度：$O(n \log n)$
+
+空间复杂度：$O(\log n)$
+
+## 代码
+
+```c++
 class Solution {
 public:
     int maxFrequency(vector<int>& nums, int k) {
@@ -24,3 +29,4 @@ public:
         return ans;
     }
 };
+```
