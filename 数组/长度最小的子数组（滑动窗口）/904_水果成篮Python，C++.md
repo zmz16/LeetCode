@@ -12,7 +12,7 @@ https://leetcode.cn/problems/fruit-into-baskets/description/
 
 空间复杂度：$O(1)$，在任意时刻，哈希表中至多有 3 个键值对（3 种不同元素）
 
-## 代码
+## Python
 
 ```python
 from collections import defaultdict
@@ -36,4 +36,29 @@ class Solution(object):
                 left += 1
             ans = max(ans, right - left + 1)
         return ans
+```
+
+## C++
+
+```C++
+class Solution {
+public:
+    int totalFruit(vector<int>& fruits) {
+        int ans = 0, l = 0;
+        unordered_map<int, int> cnt;
+
+        for (int r = 0; r < fruits.size(); r++) {
+            cnt[fruits[r]]++;
+            while (cnt.size() > 2) {
+                cnt[fruits[l]]--;
+                if (cnt[fruits[l]] == 0) {
+                    cnt.erase(fruits[l]);
+                }
+                l++;
+            }
+            ans = max(ans, r - l + 1);
+        }
+        return ans;
+    }
+};
 ```
