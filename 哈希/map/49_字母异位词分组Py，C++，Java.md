@@ -2,9 +2,7 @@
 
 https://leetcode.cn/problems/group-anagrams/?envType=study-plan-v2&envId=top-100-liked
 
-## 代码
-
-### Java
+## Java
 
 ```Java
 class Solution {
@@ -32,7 +30,7 @@ class Solution {
 }
 ```
 
-### Python
+## Python
 
 ```python
 class Solution(object):
@@ -47,6 +45,8 @@ class Solution(object):
         return list(d.values())
         
 ```
+
+## C++
 
 ```C++
 class Solution {

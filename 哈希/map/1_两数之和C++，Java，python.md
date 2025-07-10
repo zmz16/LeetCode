@@ -2,9 +2,27 @@
 
 https://leetcode.cn/problems/two-sum/?envType=study-plan-v2&envId=top-100-liked
 
-## 代码
+## C++
 
-### Java
+```c++
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int, int> res;
+
+        for (int i = 0; i < nums.size(); i++) {
+            auto item = res.find(target - nums[i]);
+            if (item != res.end()) {
+                return {item->second, i};
+            }
+            res[nums[i]] = i;
+        }
+        return {};
+    }
+};
+```
+
+## Java
 
 ```java
 class Solution {
@@ -23,7 +41,7 @@ class Solution {
 }
 ```
 
-### Python
+## Python
 
 ```python
 class Solution(object):
