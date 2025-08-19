@@ -1,0 +1,42 @@
+# 题目链接
+
+https://leetcode.cn/problems/lemonade-change/description/
+
+## 自己写的
+
+```cpp
+class Solution {
+public:
+    bool lemonadeChange(vector<int>& bills) {
+        int money[3] = {0};
+        for (int i = 0; i < bills.size(); i++) {
+            if (bills[i] == 5) {
+                money[0] += 5;
+            }
+            else if (bills[i] == 10) {
+                money[1] += 10;
+                money[0] -= 5;
+            }
+            else {
+                money[2] += 20;
+                if (money[1] > 1) {
+                    money[1] -= 10;
+                    money[0] -= 5;
+                }
+                else {
+                    money[0] -= 15;
+                }
+            }
+
+            if (money[0] < 0 || money[1] < 0 || money[2] < 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+};
+```
+
+## 其他思路
+
+可以直接用3个变量记录5，10，20美元的数量。
